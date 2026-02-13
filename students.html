@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management | My College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/students.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            My<span>College</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="students.html" class="active"><i class="fas fa-user-graduate"></i> Students</a></li>
+            <li><a href="exams.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="header-bg"></div>
+    <div class="header-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="header-content">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Students</span>
+        </div>
+        <h1>Student <span>Management</span></h1>
+        <p>View, add, search, and manage student records efficiently with our modern management system.</p>
+    </div>
+    <div class="header-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#f8fafc"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Student Stats Dashboard -->
+<section class="student-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalStudents">2,547</h3>
+                    <p>Total Students</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12% from last year
+                    </span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>2,341</h3>
+                    <p>Active Students</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8% increase
+                    </span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>156</h3>
+                    <p>New Admissions</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> This month
+                    </span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>423</h3>
+                    <p>Graduated</p>
+                    <span class="stat-change neutral">
+                        <i class="fas fa-minus"></i> This year
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="main-content">
+    <div class="container">
+        <div class="content-grid">
+            
+            <!-- Left Sidebar - Add Student Form -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-plus"></i> Add New Student</h3>
+                    </div>
+                    <form id="studentForm" class="student-form">
+                        <div class="form-group">
+                            <label for="sid">
+                                <i class="fas fa-id-card"></i> Student ID
+                            </label>
+                            <input type="text" id="sid" placeholder="e.g., STU2024001" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sname">
+                                <i class="fas fa-user"></i> Full Name
+                            </label>
+                            <input type="text" id="sname" placeholder="Enter student name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="semail">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="semail" placeholder="student@college.edu" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sphone">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="sphone" placeholder="+1 (555) 000-0000">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="scourse">
+                                    <i class="fas fa-book"></i> Course
+                                </label>
+                                <select id="scourse" required>
+                                    <option value="">Select Course</option>
+                                    <option value="CSE">Computer Science</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="ECE">Electronics & Comm.</option>
+                                    <option value="MECH">Mechanical Eng.</option>
+                                    <option value="CIVIL">Civil Engineering</option>
+                                    <option value="EEE">Electrical Eng.</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="syear">
+                                    <i class="fas fa-calendar"></i> Year
+                                </label>
+                                <select id="syear" required>
+                                    <option value="">Select Year</option>
+                                    <option value="1">1st Year</option>
+                                    <option value="2">2nd Year</option>
+                                    <option value="3">3rd Year</option>
+                                    <option value="4">4th Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="saddress">
+                                <i class="fas fa-map-marker-alt"></i> Address
+                            </label>
+                            <textarea id="saddress" placeholder="Enter address" rows="2"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sphoto">
+                                <i class="fas fa-camera"></i> Profile Photo
+                            </label>
+                            <div class="file-upload">
+                                <input type="file" id="sphoto" accept="image/*">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Drag & drop or click to upload</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="reset" class="btn-reset">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-plus"></i> Add Student
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="sidebar-card quick-actions">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn">
+                            <i class="fas fa-file-import"></i>
+                            <span>Import CSV</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Export Data</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-print"></i>
+                            <span>Print List</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Bulk Email</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="main-area">
+                <!-- Search & Filter Bar -->
+                <div class="toolbar">
+                    <div class="search-filter-row">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchStudent" placeholder="Search by name, ID, or email...">
+                            <button class="search-clear" id="clearSearch">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <div class="filter-select">
+                                <i class="fas fa-book"></i>
+                                <select id="filterCourse">
+                                    <option value="all">All Courses</option>
+                                    <option value="CSE">Computer Science</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="ECE">Electronics & Comm.</option>
+                                    <option value="MECH">Mechanical Eng.</option>
+                                    <option value="CIVIL">Civil Engineering</option>
+                                    <option value="EEE">Electrical Eng.</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-select">
+                                <i class="fas fa-calendar"></i>
+                                <select id="filterYear">
+                                    <option value="all">All Years</option>
+                                    <option value="1">1st Year</option>
+                                    <option value="2">2nd Year</option>
+                                    <option value="3">3rd Year</option>
+                                    <option value="4">4th Year</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-select">
+                                <i class="fas fa-filter"></i>
+                                <select id="filterStatus">
+                                    <option value="all">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="graduated">Graduated</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="toolbar-actions">
+                        <div class="results-info">
+                            <span>Showing <strong>1-10</strong> of <strong>2,547</strong> students</span>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="table">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <button class="view-btn" data-view="grid">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bulk Actions Bar -->
+                <div class="bulk-actions" id="bulkActions" style="display: none;">
+                    <div class="selected-count">
+                        <span><strong id="selectedCount">0</strong> students selected</span>
+                    </div>
+                    <div class="bulk-buttons">
+                        <button class="bulk-btn"><i class="fas fa-envelope"></i> Email</button>
+                        <button class="bulk-btn"><i class="fas fa-download"></i> Export</button>
+                        <button class="bulk-btn danger"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </div>
+                
+                <!-- Student Table -->
+                <div class="table-container">
+                    <table class="student-table" id="studentTable">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" id="selectAll">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </th>
+                                <th>Student</th>
+                                <th>ID</th>
+                                <th>Course</th>
+                                <th>Year</th>
+                                <th>Status</th>
+                                <th>Enrolled</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=john" alt="John">
+                                        <div>
+                                            <h4>John Anderson</h4>
+                                            <span>john.anderson@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024001</span></td>
+                                <td><span class="course-badge cse">CSE</span></td>
+                                <td>3rd Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 15, 2022</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 2 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=sarah" alt="Sarah">
+                                        <div>
+                                            <h4>Sarah Williams</h4>
+                                            <span>sarah.williams@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024002</span></td>
+                                <td><span class="course-badge it">IT</span></td>
+                                <td>2nd Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 20, 2023</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 3 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=mike" alt="Mike">
+                                        <div>
+                                            <h4>Michael Chen</h4>
+                                            <span>michael.chen@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024003</span></td>
+                                <td><span class="course-badge ece">ECE</span></td>
+                                <td>4th Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 10, 2021</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 4 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=emily" alt="Emily">
+                                        <div>
+                                            <h4>Emily Davis</h4>
+                                            <span>emily.davis@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024004</span></td>
+                                <td><span class="course-badge mech">MECH</span></td>
+                                <td>1st Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 25, 2024</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 5 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=alex" alt="Alex">
+                                        <div>
+                                            <h4>Alex Thompson</h4>
+                                            <span>alex.thompson@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024005</span></td>
+                                <td><span class="course-badge cse">CSE</span></td>
+                                <td>2nd Year</td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td>Aug 18, 2023</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 6 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=jennifer" alt="Jennifer">
+                                        <div>
+                                            <h4>Jennifer Lee</h4>
+                                            <span>jennifer.lee@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024006</span></td>
+                                <td><span class="course-badge civil">CIVIL</span></td>
+                                <td>3rd Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 12, 2022</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 7 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=david" alt="David">
+                                        <div>
+                                            <h4>David Wilson</h4>
+                                            <span>david.wilson@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024007</span></td>
+                                <td><span class="course-badge eee">EEE</span></td>
+                                <td>4th Year</td>
+                                <td><span class="status-badge graduated">Graduated</span></td>
+                                <td>Aug 08, 2021</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Row 8 -->
+                            <tr>
+                                <td class="checkbox-col">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" class="row-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://i.pravatar.cc/40?u=lisa" alt="Lisa">
+                                        <div>
+                                            <h4>Lisa Martinez</h4>
+                                            <span>lisa.martinez@college.edu</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="student-id">STU2024008</span></td>
+                                <td><span class="course-badge it">IT</span></td>
+                                <td>1st Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Aug 28, 2024</td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <button class="action-icon view" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon edit" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-icon delete" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-wrapper">
+                    <div class="rows-per-page">
+                        <span>Rows per page:</span>
+                        <select id="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <div class="pagination">
+                        <button class="page-btn prev" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn">255</button>
+                        <button class="page-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+<!-- Student Modal (View/Edit) -->
+<div class="modal-overlay" id="studentModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h3><i class="fas fa-user"></i> Student Details</h3>
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-student-profile">
+                <img src="https://i.pravatar.cc/100?u=john" alt="Student">
+                <div class="modal-student-info">
+                    <h2>John Anderson</h2>
+                    <p>STU2024001 • Computer Science • 3rd Year</p>
+                    <span class="status-badge active">Active</span>
+                </div>
+            </div>
+            <div class="modal-details-grid">
+                <div class="detail-item">
+                    <label>Email</label>
+                    <p>john.anderson@college.edu</p>
+                </div>
+                <div class="detail-item">
+                    <label>Phone</label>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="detail-item">
+                    <label>Date of Birth</label>
+                    <p>March 15, 2002</p>
+                </div>
+                <div class="detail-item">
+                    <label>Enrollment Date</label>
+                    <p>August 15, 2022</p>
+                </div>
+                <div class="detail-item full-width">
+                    <label>Address</label>
+                    <p>123 College Street, Apt 4B, New York, NY 10001</p>
+                </div>
+            </div>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <h4>92%</h4>
+                    <span>Attendance</span>
+                </div>
+                <div class="modal-stat">
+                    <h4>3.8</h4>
+                    <span>GPA</span>
+                </div>
+                <div class="modal-stat">
+                    <h4>15</h4>
+                    <span>Credits</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary">
+                <i class="fas fa-edit"></i> Edit
+            </button>
+            <button class="btn-primary">
+                <i class="fas fa-download"></i> Download Report
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        My<span>College</span>
+                    </div>
+                    <p>Empowering students with cutting-edge education and preparing them for global challenges since 1999.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="students.html">Students</a></li>
+                        <li><a href="exams.html">Exams</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Student Resources</h4>
+                    <ul>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Course Catalog</a></li>
+                        <li><a href="#">Library Portal</a></li>
+                        <li><a href="#">Career Services</a></li>
+                        <li><a href="#">Student Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> students@mycollege.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 MyCollege | Excellence in Education</p>
+            <p class="designer">Designed with <i class="fas fa-heart"></i> by <span>Munt</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="js/students.js"></script>
+</body>
+</html>

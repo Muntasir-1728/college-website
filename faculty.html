@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Directory | My College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/faculty.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            My<span>College</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="faculty.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+            <li><a href="exams.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="header-bg"></div>
+    <div class="header-content">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Faculty</span>
+        </div>
+        <h1>Our Expert <span>Faculty</span></h1>
+        <p>Connecting you with world-class educators and industry veterans who shape future leaders.</p>
+    </div>
+    <div class="header-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#f8fafc"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Faculty Stats -->
+<section class="faculty-stats">
+    <div class="container">
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>150+</h3>
+                    <p>Total Faculty</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>45+</h3>
+                    <p>PhD Holders</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>12</h3>
+                    <p>Departments</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>4.8</h3>
+                    <p>Avg. Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search & Filter Section -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-wrapper">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchFaculty" placeholder="Search by name, department, or expertise...">
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="filter-group">
+                <div class="filter-box">
+                    <i class="fas fa-building"></i>
+                    <select id="deptFilter">
+                        <option value="all">All Departments</option>
+                        <option value="CSE">Computer Science</option>
+                        <option value="Maths">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="English">English</option>
+                        <option value="ECE">Electronics</option>
+                        <option value="ME">Mechanical</option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <i class="fas fa-sort"></i>
+                    <select id="sortFilter">
+                        <option value="name">Sort by Name</option>
+                        <option value="experience">Sort by Experience</option>
+                        <option value="rating">Sort by Rating</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="active-filters">
+            <span class="filter-tag">All Departments <i class="fas fa-times"></i></span>
+            <span class="results-count"><strong>150</strong> faculty members found</span>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Faculty -->
+<section class="featured-faculty">
+    <div class="container">
+        <div class="section-header-left">
+            <span class="section-tag">Spotlight</span>
+            <h2>Featured <span>Educators</span></h2>
+        </div>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="https://i.pravatar.cc/300?u=featured1" alt="Dr. Sarah Williams">
+                    <div class="featured-overlay">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-info">
+                    <span class="featured-badge">Dean</span>
+                    <h3>Dr. Sarah Williams</h3>
+                    <p class="designation">Dean of Academics</p>
+                    <p class="bio">Leading academic excellence with 20+ years of experience in higher education and research.</p>
+                    <div class="featured-meta">
+                        <span><i class="fas fa-graduation-cap"></i> PhD, MIT</span>
+                        <span><i class="fas fa-briefcase"></i> 20 Years</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="https://i.pravatar.cc/300?u=featured2" alt="Prof. James Anderson">
+                    <div class="featured-overlay">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-info">
+                    <span class="featured-badge">HOD</span>
+                    <h3>Prof. James Anderson</h3>
+                    <p class="designation">Head of Computer Science</p>
+                    <p class="bio">Expert in AI and Machine Learning with publications in top-tier conferences.</p>
+                    <div class="featured-meta">
+                        <span><i class="fas fa-graduation-cap"></i> PhD, Stanford</span>
+                        <span><i class="fas fa-briefcase"></i> 15 Years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Faculty Grid -->
+<section class="faculty-section">
+    <div class="container">
+        <div class="section-header-left">
+            <span class="section-tag">Our Team</span>
+            <h2>All Faculty <span>Members</span></h2>
+        </div>
+        
+        <div class="faculty-grid" id="facultyList">
+            <!-- Faculty Card 1 -->
+            <div class="faculty-card" data-dept="CSE">
+                <div class="card-header">
+                    <span class="dept-badge">CSE</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=kumar" alt="Dr. Kumar">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Dr. Kumar</h3>
+                    <p class="designation">Senior Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Data Science</span>
+                        <span>AI/ML</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>12 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>45 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 2 -->
+            <div class="faculty-card" data-dept="Maths">
+                <div class="card-header">
+                    <span class="dept-badge maths">Maths</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=anitha" alt="Mrs. Anitha">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Mrs. Anitha</h3>
+                    <p class="designation">Head of Department</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Calculus</span>
+                        <span>Statistics</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>10 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>32 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 3 -->
+            <div class="faculty-card" data-dept="Physics">
+                <div class="card-header">
+                    <span class="dept-badge physics">Physics</span>
+                    <button class="favorite-btn active"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=robert" alt="Dr. Robert">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Dr. Robert Chen</h3>
+                    <p class="designation">Associate Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>4.0</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Quantum Physics</span>
+                        <span>Optics</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>8 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>28 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 4 -->
+            <div class="faculty-card" data-dept="Chemistry">
+                <div class="card-header">
+                    <span class="dept-badge chemistry">Chemistry</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=emily" alt="Dr. Emily">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Dr. Emily Parker</h3>
+                    <p class="designation">Research Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Organic Chem</span>
+                        <span>Biochem</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>14 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>52 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 5 -->
+            <div class="faculty-card" data-dept="English">
+                <div class="card-header">
+                    <span class="dept-badge english">English</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=michael" alt="Prof. Michael">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Prof. Michael Brown</h3>
+                    <p class="designation">Senior Lecturer</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Literature</span>
+                        <span>Linguistics</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>11 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>18 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 6 -->
+            <div class="faculty-card" data-dept="ECE">
+                <div class="card-header">
+                    <span class="dept-badge ece">ECE</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=jennifer" alt="Dr. Jennifer">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Dr. Jennifer Lee</h3>
+                    <p class="designation">Assistant Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>4.2</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>VLSI</span>
+                        <span>Embedded</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>6 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>15 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 7 -->
+            <div class="faculty-card" data-dept="CSE">
+                <div class="card-header">
+                    <span class="dept-badge">CSE</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=david" alt="Prof. David">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Prof. David Wilson</h3>
+                    <p class="designation">Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.6</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Cybersecurity</span>
+                        <span>Networks</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>16 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>67 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+
+            <!-- Faculty Card 8 -->
+            <div class="faculty-card" data-dept="ME">
+                <div class="card-header">
+                    <span class="dept-badge me">ME</span>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="card-image">
+                    <img src="https://i.pravatar.cc/150?u=alex" alt="Dr. Alex">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="card-body">
+                    <h3>Dr. Alex Thompson</h3>
+                    <p class="designation">Associate Professor</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="expertise-tags">
+                        <span>Thermodynamics</span>
+                        <span>CAD</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>9 Years</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>24 Papers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-contact"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="btn-profile-view">View Profile</a>
+                    <a href="#" class="btn-schedule"><i class="fas fa-calendar"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-dots">...</span>
+            <button class="page-btn">12</button>
+            <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- Join CTA Section -->
+<section class="join-section">
+    <div class="container">
+        <div class="join-card">
+            <div class="join-content">
+                <h2>Join Our <span>Faculty Team</span></h2>
+                <p>We're always looking for passionate educators to join our growing team. Shape the future with us.</p>
+                <div class="join-features">
+                    <div class="join-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Competitive Salary</span>
+                    </div>
+                    <div class="join-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Research Grants</span>
+                    </div>
+                    <div class="join-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Professional Development</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-white">
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </a>
+            </div>
+            <div class="join-image">
+                <i class="fas fa-users-cog"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        My<span>College</span>
+                    </div>
+                    <p>Empowering students with cutting-edge education and preparing them for global challenges since 1999.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="students.html">Students</a></li>
+                        <li><a href="exams.html">Exams</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Departments</h4>
+                    <ul>
+                        <li><a href="#">Computer Science</a></li>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Physics</a></li>
+                        <li><a href="#">Chemistry</a></li>
+                        <li><a href="#">Electronics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> faculty@mycollege.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 MyCollege | Excellence in Education</p>
+            <p class="designer">Designed with <i class="fas fa-heart"></i> by <span>Munt</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="js/faculty.js"></script>
+</body>
+</html>
