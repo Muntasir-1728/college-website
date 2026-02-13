@@ -86,6 +86,43 @@ function changeNotice() {
 
 setInterval(changeNotice, 3000);
 
+/ ==================== MOBILE MENU (SAFE FIX) ====================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!hamburger || !navLinks) return;
+
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    hamburger.addEventListener("click", function () {
+
+        // Only work on mobile
+        if (!isMobile()) return;
+
+        if (navLinks.classList.contains("menu-open")) {
+
+            // Close
+            navLinks.classList.remove("menu-open");
+            navLinks.style.transform = "translateX(100%)";
+
+        } else {
+
+            // Open
+            navLinks.classList.add("menu-open");
+            navLinks.style.transform = "translateX(0)";
+
+        }
+
+    });
+
+});
+
+
 
 const form = document.getElementById("studentForm");
 const tableBody = document.querySelector("#studentTable tbody");
