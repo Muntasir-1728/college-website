@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | My College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            My<span>College</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+            <li><a href="exams.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+            <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="header-bg"></div>
+    <div class="header-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="header-content">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Contact</span>
+        </div>
+        <h1>Get in <span>Touch</span></h1>
+        <p>We're here to help you. Reach out anytime and let us know how we can assist you.</p>
+    </div>
+    <div class="header-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#f8fafc"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Contact Info Cards -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="info-cards-grid">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Our Location</h3>
+                    <p>My College Campus,<br>Main Road, Chennai,<br>Tamil Nadu - 600001</p>
+                    <a href="#map-section" class="info-link">
+                        View on Map <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Phone Numbers</h3>
+                    <p><strong>Main Office:</strong> +91 98765 43210</p>
+                    <p><strong>Admissions:</strong> +91 91234 56789</p>
+                    <a href="tel:+919876543210" class="info-link">
+                        Call Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Email Address</h3>
+                    <p><strong>General:</strong> info@mycollege.edu</p>
+                    <p><strong>Support:</strong> support@mycollege.edu</p>
+                    <a href="mailto:info@mycollege.edu" class="info-link">
+                        Send Email <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Office Hours</h3>
+                    <p><strong>Mon - Fri:</strong> 9:00 AM - 5:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <span class="status-badge open">
+                        <i class="fas fa-circle"></i> Currently Open
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="contact-main">
+    <div class="container">
+        <div class="contact-grid">
+            
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <div class="form-header">
+                    <span class="section-tag"><i class="fas fa-paper-plane"></i> Send Message</span>
+                    <h2>Drop Us a <span>Line</span></h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">
+                                <i class="fas fa-user"></i> First Name
+                            </label>
+                            <input type="text" id="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">
+                                <i class="fas fa-user"></i> Last Name
+                            </label>
+                            <input type="text" id="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="phone" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="department">
+                            <i class="fas fa-building"></i> Department
+                        </label>
+                        <select id="department">
+                            <option value="">Select Department</option>
+                            <option value="admissions">Admissions</option>
+                            <option value="academics">Academics</option>
+                            <option value="examinations">Examinations</option>
+                            <option value="administration">Administration</option>
+                            <option value="finance">Finance & Accounts</option>
+                            <option value="placement">Placement Cell</option>
+                            <option value="library">Library</option>
+                            <option value="hostel">Hostel</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-tag"></i> Subject
+                        </label>
+                        <input type="text" id="subject" placeholder="How can we help you?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment-alt"></i> Your Message
+                        </label>
+                        <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">Subscribe to our newsletter for updates</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                    
+                    <p id="formStatus" class="form-status"></p>
+                </form>
+            </div>
+            
+            <!-- Sidebar Info -->
+            <div class="contact-sidebar">
+                
+                <!-- Quick Contact Card -->
+                <div class="sidebar-card quick-contact">
+                    <div class="card-header">
+                        <h3><i class="fas fa-headset"></i> Quick Contact</h3>
+                    </div>
+                    <div class="quick-contact-list">
+                        <div class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="quick-info">
+                                <h4>Admissions Office</h4>
+                                <p>+91 98765 43211</p>
+                                <a href="mailto:admissions@mycollege.edu">admissions@mycollege.edu</a>
+                            </div>
+                        </div>
+                        <div class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="quick-info">
+                                <h4>Examination Cell</h4>
+                                <p>+91 98765 43212</p>
+                                <a href="mailto:exams@mycollege.edu">exams@mycollege.edu</a>
+                            </div>
+                        </div>
+                        <div class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="quick-info">
+                                <h4>Placement Cell</h4>
+                                <p>+91 98765 43213</p>
+                                <a href="mailto:placement@mycollege.edu">placement@mycollege.edu</a>
+                            </div>
+                        </div>
+                        <div class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="quick-info">
+                                <h4>IT Support</h4>
+                                <p>+91 98765 43214</p>
+                                <a href="mailto:itsupport@mycollege.edu">itsupport@mycollege.edu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Office Hours Card -->
+                <div class="sidebar-card office-hours">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                    </div>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Tuesday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Wednesday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Thursday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Friday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">9:00 AM - 1:00 PM</span>
+                        </div>
+                        <div class="hours-item closed">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Links Card -->
+                <div class="sidebar-card social-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    </div>
+                    <div class="social-grid">
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-btn youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section" id="map-section">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag"><i class="fas fa-map-marked-alt"></i> Location</span>
+            <h2>Find Us on <span>Map</span></h2>
+            <p>Visit our campus and experience the vibrant academic environment</p>
+        </div>
+        
+        <div class="map-wrapper">
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=chennai%20india&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-info">
+                <div class="map-info-card">
+                    <div class="map-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="map-details">
+                        <h4>Campus Address</h4>
+                        <p>My College Campus, Main Road,<br>Chennai, Tamil Nadu - 600001, India</p>
+                    </div>
+                </div>
+                <div class="map-actions">
+                    <a href="https://goo.gl/maps/your-map-link" target="_blank" class="btn-directions">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                    <a href="#" class="btn-street-view">
+                        <i class="fas fa-street-view"></i> Street View
+                    </a>
+                </div>
+                <div class="nearby-places">
+                    <h5>Nearby Landmarks</h5>
+                    <ul>
+                        <li><i class="fas fa-train"></i> Central Railway Station - 2 km</li>
+                        <li><i class="fas fa-bus"></i> Bus Terminal - 1.5 km</li>
+                        <li><i class="fas fa-plane"></i> Airport - 15 km</li>
+                        <li><i class="fas fa-hotel"></i> Hotel Grand - 500 m</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag"><i class="fas fa-question-circle"></i> FAQs</span>
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Find quick answers to common queries</p>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>How can I apply for admission?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>You can apply for admission through our online portal or visit the admissions office in person. The application process includes filling out the form, submitting required documents, and appearing for an entrance test if applicable.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>What are the fee payment options?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept payments through multiple modes including online banking, credit/debit cards, UPI, demand draft, and cash payment at the accounts office. EMI options are also available through select banks.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>Is hostel facility available?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we have separate hostel facilities for boys and girls with modern amenities including WiFi, mess, gym, and 24/7 security. Hostel applications are processed on a first-come, first-served basis.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>How do I get my transcripts?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>Transcripts can be requested through the examination cell. You need to submit an application form along with the required fee. Processing typically takes 5-7 working days.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>Does the college provide placement assistance?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our dedicated placement cell organizes campus recruitment drives, workshops, and training programs. We have tie-ups with leading companies across various industries.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>How can I contact a specific department?</h4>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p>You can find department-specific contact details on our website under the 'Faculty' section, or contact the main reception desk who will connect you to the relevant department.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-card">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div class="newsletter-text">
+                    <h2>Subscribe to Our <span>Newsletter</span></h2>
+                    <p>Stay updated with the latest news, events, and announcements from our college.</p>
+                </div>
+            </div>
+            <form class="newsletter-form">
+                <div class="newsletter-input-group">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Subscribe</span>
+                    </button>
+                </div>
+                <p class="newsletter-note">
+                    <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe anytime.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="contact-cta">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2>Still Have <span>Questions?</span></h2>
+                <p>Our support team is ready to help you with any queries. Feel free to reach out through any of our communication channels.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+919876543210" class="btn-primary">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                    <a href="#" class="btn-outline-white">
+                        <i class="fas fa-comments"></i> Live Chat
+                    </a>
+                </div>
+            </div>
+            <div class="cta-image">
+                <i class="fas fa-headset"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        My<span>College</span>
+                    </div>
+                    <p>Empowering students with cutting-edge education and preparing them for global challenges since 1999.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="students.html">Students</a></li>
+                        <li><a href="exams.html">Exams</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> My College Campus, Chennai</p>
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@mycollege.edu</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 5PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 MyCollege | Excellence in Education</p>
+            <p class="designer">Designed with <i class="fas fa-heart"></i> by <span>MAHMOOD MUNTASIR</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Portal | My College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exams.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            My<span>College</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+            <li><a href="exams.html" class="active"><i class="fas fa-file-alt"></i> Exams</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="header-bg"></div>
+    <div class="header-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="header-content">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Examinations</span>
+        </div>
+        <h1>Examination <span>Portal</span></h1>
+        <p>Access exam schedules, check results, download hall tickets, and stay updated with examination announcements.</p>
+    </div>
+    <div class="header-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#f8fafc"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Exam Overview Stats -->
+<section class="exam-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>March 2025</h3>
+                    <p>Current Session</p>
+                    <span class="stat-badge active">Ongoing</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>5 Days</h3>
+                    <p>Until Next Exam</p>
+                    <span class="stat-badge warning">Prepare Now</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>24</h3>
+                    <p>Total Exams</p>
+                    <span class="stat-badge info">This Semester</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>8</h3>
+                    <p>Results Declared</p>
+                    <span class="stat-badge success">Updated</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Important Notice Banner -->
+<section class="notice-banner">
+    <div class="container">
+        <div class="notice-card">
+            <div class="notice-icon">
+                <i class="fas fa-bullhorn"></i>
+            </div>
+            <div class="notice-content">
+                <h4>Important Announcement</h4>
+                <p>Mid-semester examinations for all departments will commence from March 20, 2025. Students are advised to download their hall tickets before March 15, 2025.</p>
+            </div>
+            <button class="notice-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="main-content">
+    <div class="container">
+        
+        <!-- Exam Timetable Section -->
+        <div class="section-block">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <span class="section-tag"><i class="fas fa-calendar-alt"></i> Schedule</span>
+                    <h2>Exam <span>Timetable</span></h2>
+                    <p>View and download examination schedules for all departments</p>
+                </div>
+                <div class="section-actions">
+                    <button class="btn-icon" title="Download PDF">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="btn-icon" title="Print">
+                        <i class="fas fa-print"></i>
+                    </button>
+                    <button class="btn-icon" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Course Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fas fa-th-large"></i> All Courses
+                </button>
+                <button class="filter-tab" data-filter="CSE">
+                    <i class="fas fa-laptop-code"></i> CSE
+                </button>
+                <button class="filter-tab" data-filter="IT">
+                    <i class="fas fa-network-wired"></i> IT
+                </button>
+                <button class="filter-tab" data-filter="ECE">
+                    <i class="fas fa-microchip"></i> ECE
+                </button>
+                <button class="filter-tab" data-filter="MECH">
+                    <i class="fas fa-cogs"></i> MECH
+                </button>
+                <button class="filter-tab" data-filter="CIVIL">
+                    <i class="fas fa-building"></i> CIVIL
+                </button>
+                <button class="filter-tab" data-filter="EEE">
+                    <i class="fas fa-bolt"></i> EEE
+                </button>
+            </div>
+
+            <!-- Exam Cards Grid -->
+            <div class="exam-cards-grid" id="examCards">
+                <!-- Exam Card 1 -->
+                <div class="exam-card" data-course="CSE">
+                    <div class="exam-date">
+                        <span class="day">20</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge cse">CSE</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Data Structures & Algorithms</h3>
+                        <p class="exam-code">CS301 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:30 AM - 12:30 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall A101</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Exam Card 2 -->
+                <div class="exam-card" data-course="IT">
+                    <div class="exam-date">
+                        <span class="day">22</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge it">IT</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Database Management Systems</h3>
+                        <p class="exam-code">IT302 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:30 AM - 12:30 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall B203</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Exam Card 3 -->
+                <div class="exam-card" data-course="ECE">
+                    <div class="exam-date">
+                        <span class="day">24</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge ece">ECE</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Digital Electronics</h3>
+                        <p class="exam-code">EC303 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall C305</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Exam Card 4 -->
+                <div class="exam-card" data-course="MECH">
+                    <div class="exam-date">
+                        <span class="day">26</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge mech">MECH</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Thermodynamics</h3>
+                        <p class="exam-code">ME304 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall D110</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Exam Card 5 -->
+                <div class="exam-card" data-course="CIVIL">
+                    <div class="exam-date">
+                        <span class="day">28</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge civil">CIVIL</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Structural Analysis</h3>
+                        <p class="exam-code">CE305 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:30 AM - 12:30 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall E201</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Exam Card 6 -->
+                <div class="exam-card" data-course="EEE">
+                    <div class="exam-date">
+                        <span class="day">30</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge eee">EEE</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Power Systems</h3>
+                        <p class="exam-code">EE306 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall F102</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status upcoming">
+                        <i class="fas fa-clock"></i> Upcoming
+                    </div>
+                </div>
+
+                <!-- Completed Exam Card -->
+                <div class="exam-card completed" data-course="CSE">
+                    <div class="exam-date">
+                        <span class="day">15</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge cse">CSE</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Computer Networks</h3>
+                        <p class="exam-code">CS302 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:30 AM - 12:30 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall A102</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status done">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                </div>
+
+                <!-- Cancelled Exam Card -->
+                <div class="exam-card cancelled" data-course="IT">
+                    <div class="exam-date">
+                        <span class="day">18</span>
+                        <span class="month">MAR</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="exam-details">
+                        <div class="exam-course">
+                            <span class="course-badge it">IT</span>
+                            <span class="exam-type">Mid Semester</span>
+                        </div>
+                        <h3>Software Engineering</h3>
+                        <p class="exam-code">IT303 • 3rd Semester</p>
+                        <div class="exam-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Hall B204</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exam-status cancelled-status">
+                        <i class="fas fa-times-circle"></i> Postponed
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="view-more-wrapper">
+                <button class="btn-view-more">
+                    <span>View All Exams</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="two-column-grid">
+            
+            <!-- Results Section -->
+            <div class="section-block">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-tag"><i class="fas fa-chart-bar"></i> Results</span>
+                        <h2>Check Your <span>Results</span></h2>
+                        <p>Enter your student ID to view examination results</p>
+                    </div>
+                </div>
+
+                <div class="result-checker">
+                    <div class="result-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> Student ID</label>
+                            <input type="text" id="resultId" placeholder="e.g., STU2024001">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Exam Session</label>
+                            <select id="examSession">
+                                <option value="">Select Session</option>
+                                <option value="mid-2025">Mid Semester - March 2025</option>
+                                <option value="end-2024">End Semester - Dec 2024</option>
+                                <option value="mid-2024">Mid Semester - Sep 2024</option>
+                                <option value="end-2024-1">End Semester - May 2024</option>
+                            </select>
+                        </div>
+                        <button class="btn-check-result" onclick="checkResult()">
+                            <i class="fas fa-search"></i> Check Result
+                        </button>
+                    </div>
+
+                    <!-- Result Display Box -->
+                    <div class="result-box" id="resultBox">
+                        <div class="result-placeholder">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>Enter your Student ID and select exam session to view results</p>
+                        </div>
+                    </div>
+
+                    <!-- Sample Result (Hidden by default) -->
+                    <div class="result-card" id="resultCard" style="display: none;">
+                        <div class="result-header">
+                            <div class="result-student">
+                                <img src="https://i.pravatar.cc/60?u=student" alt="Student">
+                                <div>
+                                    <h4>John Anderson</h4>
+                                    <p>STU2024001 • CSE • 3rd Year</p>
+                                </div>
+                            </div>
+                            <div class="result-gpa">
+                                <span class="gpa-value">8.5</span>
+                                <span class="gpa-label">CGPA</span>
+                            </div>
+                        </div>
+                        <div class="result-subjects">
+                            <div class="subject-row">
+                                <span class="subject-name">Data Structures</span>
+                                <span class="subject-grade a-grade">A</span>
+                            </div>
+                            <div class="subject-row">
+                                <span class="subject-name">Computer Networks</span>
+                                <span class="subject-grade a-grade">A</span>
+                            </div>
+                            <div class="subject-row">
+                                <span class="subject-name">Operating Systems</span>
+                                <span class="subject-grade b-grade">B+</span>
+                            </div>
+                            <div class="subject-row">
+                                <span class="subject-name">Mathematics III</span>
+                                <span class="subject-grade a-grade">A-</span>
+                            </div>
+                            <div class="subject-row">
+                                <span class="subject-name">Software Engineering</span>
+                                <span class="subject-grade b-grade">B+</span>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <button class="btn-download">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn-print">
+                                <i class="fas fa-print"></i> Print
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Results List -->
+                <div class="recent-results">
+                    <h4><i class="fas fa-history"></i> Recently Declared Results</h4>
+                    <div class="recent-list">
+                        <div class="recent-item">
+                            <div class="recent-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="recent-info">
+                                <h5>End Semester - Dec 2024</h5>
+                                <p>All departments • Declared on Jan 15, 2025</p>
+                            </div>
+                            <a href="#" class="recent-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="recent-item">
+                            <div class="recent-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="recent-info">
+                                <h5>Mid Semester - Sep 2024</h5>
+                                <p>All departments • Declared on Oct 20, 2024</p>
+                            </div>
+                            <a href="#" class="recent-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hall Ticket & Guidelines Section -->
+            <div class="section-block">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-tag"><i class="fas fa-ticket-alt"></i> Hall Ticket</span>
+                        <h2>Download <span>Hall Ticket</span></h2>
+                        <p>Get your hall ticket and exam guidelines</p>
+                    </div>
+                </div>
+
+                <!-- Hall Ticket Download -->
+                <div class="hall-ticket-card">
+                    <div class="ticket-preview">
+                        <div class="ticket-icon">
+                            <i class="fas fa-id-badge"></i>
+                        </div>
+                        <div class="ticket-info">
+                            <h4>Mid Semester Examination</h4>
+                            <p>March 2025 Session</p>
+                            <span class="ticket-status available">Available for Download</span>
+                        </div>
+                    </div>
+                    <div class="ticket-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Enter Student ID">
+                        </div>
+                        <button class="btn-download-ticket">
+                            <i class="fas fa-download"></i> Download Hall Ticket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exam Guidelines -->
+                <div class="guidelines-section">
+                    <h4><i class="fas fa-clipboard-check"></i> Exam Guidelines</h4>
+                    <div class="guidelines-grid">
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>Carry ID Card</h5>
+                                <p>Valid college ID card is mandatory for entry</p>
+                            </div>
+                        </div>
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>Arrive Early</h5>
+                                <p>Reach exam hall 30 minutes before start time</p>
+                            </div>
+                        </div>
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>No Electronics</h5>
+                                <p>Mobile phones and electronic devices not allowed</p>
+                            </div>
+                        </div>
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>Use Blue/Black Pen</h5>
+                                <p>Only blue or black ink pen for writing answers</p>
+                            </div>
+                        </div>
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>No Books/Notes</h5>
+                                <p>No reference materials unless specified</p>
+                            </div>
+                        </div>
+                        <div class="guideline-card">
+                            <div class="guideline-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="guideline-content">
+                                <h5>Follow Instructions</h5>
+                                <p>Adhere to invigilator instructions strictly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Documents -->
+                <div class="documents-section">
+                    <h4><i class="fas fa-folder-open"></i> Important Documents</h4>
+                    <div class="documents-list">
+                        <a href="#" class="document-item">
+                            <div class="doc-icon pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="doc-info">
+                                <h5>Exam Timetable</h5>
+                                <p>PDF • 245 KB</p>
+                            </div>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="#" class="document-item">
+                            <div class="doc-icon pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="doc-info">
+                                <h5>Seating Arrangement</h5>
+                                <p>PDF • 180 KB</p>
+                            </div>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="#" class="document-item">
+                            <div class="doc-icon word">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="doc-info">
+                                <h5>Exam Guidelines</h5>
+                                <p>DOCX • 120 KB</p>
+                            </div>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="#" class="document-item">
+                            <div class="doc-icon excel">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <div class="doc-info">
+                                <h5>Hall Allocation</h5>
+                                <p>XLSX • 95 KB</p>
+                            </div>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag"><i class="fas fa-question-circle"></i> FAQs</span>
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Find answers to common examination queries</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>How can I download my hall ticket?</h4>
+                    <button class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p>You can download your hall ticket by entering your Student ID in the Hall Ticket section above. Make sure to download and print it at least 2 days before your first exam.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>What if I lose my hall ticket?</h4>
+                    <button class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p>You can re-download your hall ticket from the portal anytime. In case of emergency, contact the examination cell with your ID proof for a duplicate copy.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>When will results be declared?</h4>
+                    <button class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p>Results are typically declared within 3-4 weeks after the completion of examinations. You will receive an email notification once results are published.</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">
+                    <h4>How can I apply for revaluation?</h4>
+                    <button class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p>Revaluation applications can be submitted within 10 days of result declaration. Visit the examination cell or apply online through the student portal with the required fee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="exam-cta">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2>Need Help with <span>Examinations?</span></h2>
+                <p>Our examination cell is here to assist you with any queries regarding exams, results, or hall tickets.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">
+                        <i class="fas fa-headset"></i> Contact Exam Cell
+                    </a>
+                    <a href="mailto:exams@mycollege.edu" class="btn-outline-white">
+                        <i class="fas fa-envelope"></i> exams@mycollege.edu
+                    </a>
+                </div>
+            </div>
+            <div class="cta-image">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        My<span>College</span>
+                    </div>
+                    <p>Empowering students with cutting-edge education and preparing them for global challenges since 1999.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="students.html">Students</a></li>
+                        <li><a href="exams.html">Exams</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Exam Resources</h4>
+                    <ul>
+                        <li><a href="#">Exam Schedule</a></li>
+                        <li><a href="#">Results Portal</a></li>
+                        <li><a href="#">Hall Tickets</a></li>
+                        <li><a href="#">Revaluation</a></li>
+                        <li><a href="#">Previous Papers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Exam Cell</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Admin Block, Room 105</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4568</p>
+                        <p><i class="fas fa-envelope"></i> exams@mycollege.edu</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 5PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 MyCollege | Excellence in Education</p>
+            <p class="designer">Designed with <i class="fas fa-heart"></i> by <span>Munt</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
